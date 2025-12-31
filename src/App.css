@@ -1,0 +1,45 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   APP CONTAINER STYLES
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.app {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(180deg,
+            var(--color-midnight) 0%,
+            var(--color-deep-blue) 50%,
+            var(--color-dark-purple) 100%);
+}
+
+.app-content {
+    position: relative;
+    z-index: var(--z-content);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   SECTION-SPECIFIC ADJUSTMENTS
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.section+.section {
+    margin-top: 0;
+}
+
+/* Ensure smooth transitions between sections */
+.section {
+    position: relative;
+    z-index: var(--z-base);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   AUDIO CONTROLS (Hidden but functional)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+#background-music {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}

@@ -1,0 +1,51 @@
+.interactive-section {
+    background: var(--color-midnight);
+    padding: 6rem 0;
+}
+
+.surprises-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.surprise-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.surprise-card:hover {
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+    border-color: var(--color-gold);
+}
+
+.surprise-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.surprise-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-soft-white);
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+}

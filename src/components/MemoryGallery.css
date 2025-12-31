@@ -1,0 +1,154 @@
+.gallery-section {
+    background: var(--color-deep-blue);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.memory-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.memory-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.memory-image-placeholder {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.memory-image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent 50%,
+            rgba(0, 0, 0, 0.8) 100%);
+}
+
+.memory-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.memory-info {
+    padding: 1.5rem;
+    background: var(--color-midnight);
+}
+
+.memory-info h3 {
+    font-size: 1.5rem;
+    color: var(--color-soft-white);
+    margin-bottom: 0.5rem;
+}
+
+.memory-info p {
+    font-size: 0.9rem;
+    color: var(--color-silver);
+    margin: 0;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modal-content {
+    background: var(--color-midnight);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.close-btn:hover {
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.modal-image {
+    height: 50vh;
+    width: 100%;
+}
+
+.modal-details {
+    padding: 2rem;
+}
+
+.modal-details h2 {
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.modal-details p {
+    color: var(--color-soft-white);
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        flex-direction: row;
+        height: 60vh;
+    }
+
+    .modal-image {
+        width: 60%;
+        height: 100%;
+    }
+
+    .modal-details {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

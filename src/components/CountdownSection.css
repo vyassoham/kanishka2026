@@ -1,0 +1,131 @@
+.countdown-section {
+    background: radial-gradient(circle at center,
+            rgba(26, 15, 46, 0.8),
+            rgba(10, 10, 26, 1));
+}
+
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.countdown-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 150px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.time-unit:hover {
+    transform: translateY(-5px);
+}
+
+.time-value {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.time-label {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-silver);
+}
+
+.separator {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-silver);
+    padding-bottom: 2rem;
+}
+
+/* Color variations */
+.glow-cyan .time-value {
+    color: var(--color-neon-cyan);
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+.glow-purple .time-value {
+    color: var(--color-neon-purple);
+    text-shadow: 0 0 20px rgba(176, 38, 255, 0.4);
+}
+
+.glow-gold .time-value {
+    color: var(--color-gold);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.glow-pink .time-value {
+    color: var(--color-neon-pink);
+    text-shadow: 0 0 20px rgba(255, 0, 110, 0.4);
+}
+
+.celebration-message h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-align: center;
+    color: var(--color-gold);
+    text-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+}
+
+@media (max-width: 900px) {
+    .countdown-grid {
+        gap: 1rem;
+    }
+
+    .time-unit {
+        min-width: 100px;
+        padding: 1rem;
+    }
+
+    .time-value {
+        font-size: 2.5rem;
+    }
+
+    .separator {
+        font-size: 2.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .countdown-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .time-unit {
+        width: 100%;
+    }
+}

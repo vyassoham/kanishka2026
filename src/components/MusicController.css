@@ -1,0 +1,124 @@
+.music-controller {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: var(--z-overlay);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.music-controller-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(10, 10, 26, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.music-toggle-btn,
+.volume-toggle-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-gold);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover,
+.volume-toggle-btn:hover {
+    background: var(--color-gold);
+    color: var(--color-midnight);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.volume-slider-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.volume-percentage {
+    font-size: 0.8rem;
+    color: var(--color-soft-white);
+    min-width: 3ch;
+}
+
+/* Equalizer */
+.equalizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 30px;
+    margin-right: 1rem;
+}
+
+.equalizer-bar {
+    width: 4px;
+    background: var(--color-neon-cyan);
+    border-radius: 2px;
+    box-shadow: 0 0 5px var(--color-neon-cyan);
+}
+
+/* Audio ring animation */
+.audio-ring {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--color-gold);
+    pointer-events: none;
+    z-index: -1;
+    margin-right: 0.5rem;
+    margin-top: -22.5px;
+    /* Half height to center */
+}
+
+@media (max-width: 768px) {
+    .music-controller {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .volume-slider {
+        width: 60px;
+    }
+}
